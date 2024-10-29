@@ -5,24 +5,42 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#000000FF"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.hojoisaac.quidio"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      }
+        "backgroundColor": "#000000FF"
+      },
+      "package": "com.hojoisaac.quidio"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      [
+        "expo-font",
+        {
+          "fonts": [
+            "assets/fonts/Salmond-Light.ttf",
+            "assets/fonts/Salmond-SemiBold.ttf",
+            "assets/fonts/Satoshi-Black.otf",
+            "assets/fonts/Satoshi-Bold.otf",
+            "assets/fonts/Satoshi-Light.otf",
+            "assets/fonts/Satoshi-Medium.otf",
+            "assets/fonts/Satoshi-Regular.otf"
+          ]
+        }
+      ]
+    ]
   }
 }
