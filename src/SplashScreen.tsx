@@ -15,7 +15,7 @@ import Animated, {
 import { Theme } from "./constants/Theme";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { StatusBar } from "react-native";
-
+import ReactNativeHapticFeedback from "react-native-haptic-feedback";
 type SplashScreenViewProps = {
   finishAnimation: () => void;
 };
@@ -72,7 +72,11 @@ export const SplashScreenView: React.FC<SplashScreenViewProps> = ({
   const ADDHEIGHT = (StatusBar.currentHeight || 0) - 10;
 
   const vibratateAnimatedEnd = () => {
-    Vibration.vibrate(20);
+    const options = {
+      enableVibrateFallback: true,
+      ignoreAndroidSystemSettings: false,
+    };
+    ReactNativeHapticFeedback.trigger("soft", options);
   };
   const animatedPosition = useSharedValue({
     x: 0,
@@ -180,7 +184,7 @@ export const SplashScreenView: React.FC<SplashScreenViewProps> = ({
         opacityQui.value = withTiming(0, { duration: 100 });
         opacityCircle.value = withTiming(1, { duration: 400 }, () => {
           scale.value = withTiming(windowHeight / 90, undefined, () => {
-           runOnJS(vibratateAnimatedEnd)();
+            runOnJS(vibratateAnimatedEnd)();
             runOnJS(finishAnimation)();
           });
         });
