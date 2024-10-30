@@ -183,7 +183,7 @@ export const SplashScreenView: React.FC<SplashScreenViewProps> = ({
       if (canStart) {
         opacityQui.value = withTiming(0, { duration: 100 });
         opacityCircle.value = withTiming(1, { duration: 400 }, () => {
-          scale.value = withTiming(windowHeight / 90, undefined, () => {
+          scale.value = withTiming(windowHeight / 70, undefined, () => {
             runOnJS(vibratateAnimatedEnd)();
             runOnJS(finishAnimation)();
           });
@@ -199,7 +199,7 @@ export const SplashScreenView: React.FC<SplashScreenViewProps> = ({
       backgroundColor: interpolateColor(
         colorInterpolation.value,
         [0, 1],
-        ["yellow", "black"]
+        ["black", "yellow"]
       ),
     };
   });
@@ -280,7 +280,7 @@ export const SplashScreenView: React.FC<SplashScreenViewProps> = ({
               {
                 height: 100,
                 width: 100,
-                backgroundColor: "white",
+                backgroundColor: Theme.colors.background,
                 position: "absolute",
                 borderRadius: 50,
                 opacity: 0.4,

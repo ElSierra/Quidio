@@ -4,10 +4,10 @@ export const Theme = {
         secondary: "#FFD700",
         white: "#FFFFFF",
         black: "#000000",
-        grey: "#808080",
-        lightGrey: "#D3D3D3",
-        darkGrey: "#A9A9A9",
+        inactive: "#737373",
         error: "#FF0000",
+        tabBg: "#1E1E1EFF",
+        background:"#020202FF"
     },
     fonts: {
         light: "salmond-light",

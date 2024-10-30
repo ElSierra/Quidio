@@ -53,7 +53,7 @@ export default function App() {
  
 
   return (
-    <View style={{ flex: 1 }} onLayout={onLayoutRootView}>
+    <View style={{ flex: 1,backgroundColor:"black" }} onLayout={onLayoutRootView}>
       <SafeAreaProvider>
         <StatusBar
           animated={true}
