@@ -4,6 +4,7 @@ import Animated, {
   useAnimatedReaction,
   useAnimatedStyle,
   useSharedValue,
+  withSequence,
   withSpring,
   withTiming,
 } from "react-native-reanimated";
@@ -32,13 +33,7 @@ export const AnimatedIcon: React.FC<AnimatedIconProps> = ({
     () => focused,
     () => {
       if (focused) {
-        scaleIconFocused.value = withSpring(1.22, {
-          damping: 3,
-          stiffness: 100,
-          mass: 1,
-        },()=>{
-            scaleIconFocused.value = withSpring(1.1);
-        });
+        scaleIconFocused.value = withSequence(withSpring(1.4), withSpring(1.1));
         scaleIconUnFocused.value = withSpring(1);
         opacityFocused.value = withTiming(1);
         opacityUnFocused.value = withTiming(0);

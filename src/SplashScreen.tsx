@@ -199,7 +199,7 @@ export const SplashScreenView: React.FC<SplashScreenViewProps> = ({
       backgroundColor: interpolateColor(
         colorInterpolation.value,
         [0, 1],
-        ["black", "yellow"]
+        ["black", Theme.colors.secondary]
       ),
     };
   });

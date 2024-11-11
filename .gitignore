@@ -15,7 +15,8 @@ web-build/
 *.p12
 *.key
 *.mobileprovision
-
+*.apk
+*.aab
 # Metro
 .metro-health-check*
 

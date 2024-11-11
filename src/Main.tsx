@@ -39,6 +39,7 @@ import { Theme } from "./constants/Theme";
 import { StatusBar } from "expo-status-bar";
 import Likes from "./Screens/Likes";
 import Profile from "./Screens/Profile";
+import { BottomSheet } from "./Screens/BottomSheet";
 
 const MyTabs = createBottomTabNavigator({
   tabBar: (props) => <CustomTabBar {...props} />,
@@ -116,6 +117,22 @@ const RootStack = createNativeStackNavigator({
 
   screens: {
     Tabs: MyTabs,
+    BottomSheet: {
+      screen: BottomSheet,
+      options: {
+        presentation: "formSheet",
+        sheetAllowedDetents: [0.5,0.7,1],
+        sheetCornerRadius: 20,
+        sheetInitialDetentIndex: 0,
+        sheetLargestUndimmedDetentIndex: 0,
+        sheetElevation: 0,
+        sheetGrabberVisible: true,
+        sheetExpandsWhenScrolledToEdge: true,
+        contentStyle: {
+          backgroundColor: "white",
+        },
+      },
+    },
   },
 });
 
@@ -123,7 +140,11 @@ const Navigation = createStaticNavigation(RootStack);
 export default function Main() {
   return (
     <>
-      <StatusBar animated={true} style={"light"} backgroundColor="transparent" />
+      <StatusBar
+        animated={true}
+        style={"light"}
+        backgroundColor="transparent"
+      />
       <Navigation />
     </>
   );
