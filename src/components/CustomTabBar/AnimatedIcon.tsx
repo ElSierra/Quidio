@@ -62,10 +62,10 @@ export const AnimatedIcon: React.FC<AnimatedIconProps> = ({
   return (
     <View>
       <Animated.View style={[{ position: "absolute" }, focusedStyle]}>
-        <FocusedIcon color={Theme.colors.primary} size={size} />
+        <FocusedIcon color={Theme.colors.icon} size={size} />
       </Animated.View>
       <Animated.View style={[unfocusedStyle]}>
-        <UnfocusedIcon color={Theme.colors.inactive} size={size} />
+        <UnfocusedIcon color={Theme.colors.icon} size={size} />
       </Animated.View>
     </View>
   );

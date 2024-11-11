@@ -3,12 +3,14 @@ import React from "react";
 import Animated, {
   Easing,
   interpolate,
+  runOnJS,
   useAnimatedReaction,
   useAnimatedStyle,
   useSharedValue,
   withDelay,
   withTiming,
 } from "react-native-reanimated";
+import ReactNativeHapticFeedback from "react-native-haptic-feedback";
 type Props = {
   width: number;
   height: number;
@@ -43,7 +45,12 @@ export const Pulse: React.FC<Props> = ({ width, height, color }) => {
         biggerCircleScale.value = withTiming(
           1.5,
           { duration: 4000, easing: Easing.inOut(Easing.quad) },
-          () => {}
+          () => {
+            console.log(
+              "🚀 ~ file: index.tsx:101 ~ biggerCircleScale.value",
+              biggerCircleScale.value
+            );
+          }
         );
         smallerCircleScale.value = withTiming(
           1.5,

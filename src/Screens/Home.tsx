@@ -24,6 +24,7 @@ import Animated, {
   ZoomIn,
   ZoomOut,
 } from "react-native-reanimated";
+import ReactNativeHapticFeedback from "react-native-haptic-feedback";
 
 export default function Home() {
   const bottomTabHeight = useBottomTabBarHeight();
@@ -43,10 +44,18 @@ export default function Home() {
     currentColor.value = getColorBySelected(selected);
     previousColor.value = getColorBySelected(prevSelected);
   }, [selected]);
+  const vibrateAnimatedEnd = () => {
+    const options = {
+      enableVibrateFallback: true,
+      ignoreAndroidSystemSettings: false,
+    };
+    ReactNativeHapticFeedback.trigger("soft", options);
+  };
 
   const handlePress = (val: string) => {
     setPrevSelected(selected);
     setSelected(val);
+    vibrateAnimatedEnd();
   };
   useAnimatedReaction(
     () => {

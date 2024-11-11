@@ -117,7 +117,7 @@ export default function CustomTabBar({
             width: "100%",
             borderBottomLeftRadius: 10,
             borderBottomRightRadius: 10,
-            backgroundColor: Theme.colors.primary,
+            backgroundColor: Theme.colors.icon,
             position: "absolute",
             zIndex: 100,
             height: 5,
