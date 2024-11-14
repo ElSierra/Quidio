@@ -67,12 +67,12 @@ export default function Home() {
       switch (selected) {
         case "Sad":
           colorsIndex.value = withTiming(1, {
-            duration: 4000,
+            duration: 400,
           });
           break;
         case "Normal":
           colorsIndex.value = withTiming(2, {
-            duration: 4000,
+            duration: 400,
           });
           break;
         case "Good":
